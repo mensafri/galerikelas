@@ -1,12 +1,11 @@
 
+
 function App() {
   return (
-    <div className="h-screen flex items-center justify-center bg-slate-600">
-      <div>01</div>
-      <div>02</div>
-      <div>03</div>
-      <div>04</div>
-    </div>
+    <div className="text-center bg-gradient-to-r from-indigo-500 min-h-screen">
+      <h1 className="mt-16">Galeri Kelas</h1>
+      
+    </div >
   );
 }
 
