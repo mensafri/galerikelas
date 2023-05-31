@@ -1,5 +1,5 @@
-import { createContext, useState } from "react";
-import { inputPersons } from "../firebase";
+import { createContext, useEffect, useState } from "react";
+import { findPersons } from "../firebase";
 
 export const PersonContext = createContext({
   persons: [],
@@ -11,11 +11,17 @@ export const PersonContext = createContext({
 export const PersonProvider = ({ children }) => {
   const [persons, setPersons] = useState([]);
 
-  const addPerson = (nama, ig, imgUrl) => {
-    inputPersons(nama, ig, imgUrl)
+  const addPerson = async () => {
+    const response = await findPersons();
+    setPersons(response);
+    console.log(response);
   };
 
-  const value = {addPerson};
+  useEffect(() => {
+    addPerson();
+  }, []);
+
+  const value = { persons };
   return (
     <PersonContext.Provider value={value}>{children}</PersonContext.Provider>
   );

@@ -6,7 +6,6 @@ import { PersonContext } from "../contexts/PersonContexts";
 export default function InputPersons() {
   const [progressPercent, setProgressPercent] = useState(0);
   const [imgUrl, setImgUrl] = useState(null);
-  const { addPerson } = useContext(PersonContext);
   const [nama, setNama] = useState("");
   const [ig, setIg] = useState("");
 
@@ -45,6 +44,8 @@ export default function InputPersons() {
         });
       }
     );
+    setNama("");
+    setIg("");
   };
 
   return (

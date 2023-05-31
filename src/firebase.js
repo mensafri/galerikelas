@@ -44,11 +44,12 @@ export const findPersons = async () => {
 
   const res = [];
 
-  quotes_ref.forEach((quote) => {
+  quotes_ref.forEach((person) => {
     res.push({
-      id: quote.id,
-      ...quote.data(),
+      id: person.id,
+      ...person.data(),
     });
   });
+  console.log(res);
   return res;
 };
