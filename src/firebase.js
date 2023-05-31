@@ -50,6 +50,5 @@ export const findPersons = async () => {
       ...person.data(),
     });
   });
-  console.log(res);
   return res;
 };

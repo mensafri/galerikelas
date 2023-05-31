@@ -1,7 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { inputPersons, storage } from "../firebase";
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
-import { PersonContext } from "../contexts/PersonContexts";
 
 export default function InputPersons() {
   const [progressPercent, setProgressPercent] = useState(0);

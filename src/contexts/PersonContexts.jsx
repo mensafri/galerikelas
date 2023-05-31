@@ -3,25 +3,23 @@ import { findPersons } from "../firebase";
 
 export const PersonContext = createContext({
   persons: [],
-  addPerson: () => {},
-  updatePerson: () => {},
-  deletePerson: () => {},
+  getPersons: () => {},
+  setPersons: () => {},
 });
 
 export const PersonProvider = ({ children }) => {
   const [persons, setPersons] = useState([]);
 
-  const addPerson = async () => {
+  const getPersons = async () => {
     const response = await findPersons();
     setPersons(response);
-    console.log(response);
   };
 
   useEffect(() => {
-    addPerson();
+    getPersons();
   }, []);
 
-  const value = { persons };
+  const value = { persons, setPersons };
   return (
     <PersonContext.Provider value={value}>{children}</PersonContext.Provider>
   );
