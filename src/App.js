@@ -1,13 +1,13 @@
-import SearchBox from './components/search-box/SearchBox'
-import CardList from './components/card-list/CardList'
+import { Route, Routes } from 'react-router-dom';
+import Home from './home/Home';
+import InputPersons from './routes/InputPersons';
 
 function App() {
   return (
-    <div className="text-center bg-gradient-to-r from-indigo-500 min-h-screen">
-      <h1 className="pt-16 pb-5">Galeri Kelas</h1>
-      <SearchBox />
-      <CardList />
-    </div >
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/inputPersons' element={<InputPersons />} />
+    </Routes>
   );
 }
 
