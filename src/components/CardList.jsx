@@ -31,7 +31,7 @@ export default function CardList() {
           type="search"
           placeholder="Cari Siapa?"
           onChange={onchange}
-          className="border-none outline-none p-2.5 w-40 leading-8 mb-8"
+          className="border-none mt-7 outline-none p-2.5 w-40 leading-8 mb-8"
         />
       </div>
       <div className="mx-7 my-auto grid grid-cols-4 gap-5">
