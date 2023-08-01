@@ -25,7 +25,7 @@ export default function CardList() {
   };
 
   return (
-    <Fragment>
+    <>
       <div>
         <input
           type="search"
@@ -58,6 +58,6 @@ export default function CardList() {
           })
         )}
       </div>
-    </Fragment>
+    </>
   );
 }
